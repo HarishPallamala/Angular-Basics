@@ -1,0 +1,20 @@
+<h3>reactive-forms! FormConrtol</h3>
+Name: <input type="text" [formControl]="name">
+Password: <input type="password" [formControl]="password">
+<button (click)="getValuesOnConsole()">ConsoleValues</button>
+<h3>reactive-forms! FormGroup</h3>
+<form [formGroup]="profileForm" (ngSubmit)="getValuesOnConsole()">
+    Name: <input type="text" formControlName="nameGrp"><br>
+    @if(nameGrp?.invalid && (nameGrp?.dirty || nameGrp?.touched)){
+        <div><span class="error">*Name is required & should be min 3chars</span></div><br> 
+    }
+    Password: <input type="password" formControlName="passwordGrp"><br>
+    @if(passwordGrp?.invalid && (passwordGrp?.dirty || passwordGrp?.touched)){
+        <div><span class="error">*Please Enter Valid Password</span></div><br> 
+    }
+    Email: <input type="email" formControlName="email"><br>
+    @if(emailVal?.invalid && (emailVal?.dirty || emailVal?.touched)){
+        <div><span class="error">*Please Enter Valid email</span></div><br> 
+    }
+    <button>ConsoleValues</button>
+</form>

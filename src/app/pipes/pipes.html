@@ -1,0 +1,30 @@
+<h2>Basic Pipes</h2>
+All Upper: <span>{{title | uppercase}}</span><br>
+TitleCase: <span>{{title | titlecase}}</span><br>
+LowerCase: <span>{{title | lowercase}}</span><br>
+Date: <span>{{date | date}}</span><br>
+Date: <span>{{date | date:'full'}}</span><br>
+FullDate: <span>{{date | date:'fullDate'}}</span><br>
+CurrentTime: <span>{{date | date:'hh:mm:ss'}}</span><br>
+Dollers: <span>{{ammount | currency}}</span> 
+<!-- by default currency will be $ -->
+Rupees: <span>{{ammount | currency:'INR'}}</span> 
+Euros: <span>{{ammount | currency:'EUR'}}</span> <br>
+
+<!-- we can use multiple pipes for a single attribute -->
+ FullDate in UpperCase (MultiPipe): <span>{{date | date:'fullDate' | uppercase}}</span><br>
+
+
+<!-- OUTPUT -->
+<!-- 
+Basic Pipes
+All Upper: SOME CAPS SOME LOW
+TitleCase: Some Caps Some Low
+LowerCase: some caps some low
+Date: Apr 15, 2026
+Date: Wednesday, April 15, 2026, 8:53:51 PM GMT+05:30
+FullDate: Wednesday, April 15, 2026
+CurrentTime: 08:53:51
+Dollers: $56.00 Rupees: ₹56.00 Euros: €56.00
+FullDate in UpperCase (MultiPipe): WEDNESDAY, APRIL 15, 2026
+ -->

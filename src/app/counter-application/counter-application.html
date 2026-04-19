@@ -1,0 +1,16 @@
+<h1>counter-application!</h1>
+<div> 
+    <div>
+         Normal Counter: <span>{{count}}</span> 
+    </div>
+    <div>
+         Signal Counter: <span>{{signalCounter()}}</span> 
+    </div>
+    <button type="button" (click) = "handle('inc')">Increment</button>
+    <button (click) = "handle('dec')">Decrement</button>
+    <button (click) = "handle('reset')">Reset</button>
+</div>
+<div>
+    {{compVal()}}
+    <button (click)="updateSinalValue()">Update SignalValue</button>
+</div>

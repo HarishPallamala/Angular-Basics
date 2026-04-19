@@ -1,0 +1,30 @@
+<div class="login-container">
+  <h2>2 way binding using forms/signals</h2>
+  <input type="email" [formField]="loginForm.email" placeholder="Email" />
+  <input type="password" [formField]="loginForm.password" placeholder="Password" />
+  <p>Hello! {{loginForm.email().value()}}</p>
+</div>
+
+<div>
+  <h2>Template Driven forms - Use this when we have less no of feilds</h2>
+
+  <!-- form-practice.ts:21 ERROR RuntimeError: NG01352: If ngModel is used within a form tag, either the name attribute must be set or the form
+    control must be defined as 'standalone' in ngModelOptions.
+    use name attribute in templateDriven forms
+    Example 1: <input [(ngModel)]="person.firstName" name="first">
+    Example 2: <input [(ngModel)]="person.firstName" [ngModelOptions]="{standalone: true}"> -->
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+  Name: <input type="text" required name="name" ngModel #namevar="ngModel"><br>
+  <span class="error" *ngIf="namevar.touched && namevar.invalid">*This is required</span><br>
+  <!-- we can use @if also, i already use @if in reactive froms so using *ngIf here -->
+  Mobile: <input type="text" name="mobile" pattern="^[0-9]{10}$" #mbl="ngModel" ngModel><br>
+  <span class="error" *ngIf="mbl.touched && mbl.invalid">*ph num is required & should be 10 digits</span><br>
+  Gender: <select name="gender" ngModel>
+    <option value="M">Male</option>
+    <option value="F">Female</option>
+  </select><br>
+  Age: <input type="range" min="18" max="60" name="age" ngModel><br>
+  <button>Submit</button>
+</form>
+  
+</div>

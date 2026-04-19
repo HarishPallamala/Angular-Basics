@@ -1,0 +1,18 @@
+<h1>Passing information from parent component to child component @Input()</h1>
+Type Data to Send it to Child: <input type="text" [(ngModel)]="passVal">
+City: <select #cityVal (change)="updateCity(cityVal.value)">
+    <option value="">Select City</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Hyderabad">Hyderabad</option>
+    <option value="Banglore">Banglore</option>
+</select>
+<app-child [data]="passVal" [city]="city"></app-child>
+<!-- if we use like this ->  data="passVal" then it will pass passVal as string but we need to specify this as a variable frmo .ts file so use [] property binding -> [data]="passVal"-->
+ <!--  city is second value that we are passing to child component -->
+
+<!-- <h1>Data from child component to parent component @Output() & EventEmitter</h1>
+@for(user of users; track user){
+    <p>{{user}}</p>
+} -->
+<!-- <app-child (getUsers)="handleUsers($event)"></app-child>  -->
+
