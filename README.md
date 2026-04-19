@@ -1,116 +1,90 @@
-# Angular-Basics
-Angular Practice
-A small Angular practice project built with Angular 21 and TypeScript 5.9. This repository demonstrates a variety of Angular fundamentals and intermediate concepts through standalone component exercises.
+# Angular Practice
 
-What You’ll Learn
-This project covers:
+A small Angular practice project built with Angular 21 and TypeScript.  
+This repository demonstrates several important Angular concepts through hands-on component examples and routing exercises.
 
-Angular standalone components
-Routing with eager and lazy-loaded components
-Template-driven forms and reactive forms
-Angular signals (signal, computed, effect)
-Parent-child communication with @Input and @Output
-HTTP requests using HttpClient and a service
-Angular pipes and use of CommonModule
-404 page handling with wildcard routes
-Project Structure
-app
+---
 
-app.ts
-Root component using Angular signals for title state
-app.routes.ts
-Route configuration and lazy loading
-counter-application/
-Demonstrates signals, computed values, effects, and manual counter logic
-form-practice/
-Template-driven forms using @angular/forms/signals
-LoginData interface defined in models/formLayout.ts
-reactive-forms/
-Reactive forms with validation (FormControl, FormGroup, Validators)
-parent/ + child/
-Parent-child communication using @Input and @Output
-Event emission from child back to parent
-pipes/
-Demonstrates Angular pipes and lazy loading of component
-http-calls/
-Makes HTTP GET requests via a service
-Uses ServiceCode from Services/service-code.ts
-page-not-found/
-Wildcard route fallback for unknown paths
-Key Features
-Routing
-app.routes.ts defines routes for:
-/counter-app
-/form
-/reactive-forms
-/parent-child
-/pipes (lazy loaded)
-/http-calls
-** fallback to PageNotFound
-Signals
-counter-application uses:
-signal
-computed
-effect
-Demonstrates reactive state management without NgRx
-Forms
-form-practice
-Template-driven form with FormField and NgForm
-reactive-forms
-Reactive FormGroup
-Validation rules and get accessors for form controls
-Component Communication
-parent and child
-@Input() to pass data into child
-@Output() to emit events and data back to parent
-HTTP Service
-Services/service-code.ts
-ServiceCode.getTodos() fetches data from https://dummyjson.com/products
-http-calls component subscribes to the service and displays data
-Lazy Loading
-pipes component is loaded only when the route is visited
-Useful for learning route-based code splitting
-Getting Started
-Prerequisites
-Node.js
-npm
-Angular CLI (optional, can use npx ng)
-Install dependencies
-Run the app
-Then open:
+## 🚀 What You Will Learn
 
-Notes
-The project is configured as a standalone Angular app.
-It uses Angular 21 and modern standalone component patterns.
-The package.json includes:
-@angular/core
-@angular/router
-@angular/forms
-@angular/compiler-cli
-typescript
-vitest and prettier as dev dependencies
-What This Practice Folder is Good For
-This folder is ideal for:
+This project helps you practice and understand:
 
-Beginners learning Angular routing, forms, and services
-Developers exploring standalone component setup
-Learners practicing Angular signals and reactive state
-Anyone who wants a compact example of Angular component interaction and HTTP usage
-Recommended Next Steps
-If you want to extend this practice project:
+- Standalone Angular components
+- Angular Router with eager and lazy-loaded routes
+- Template-driven forms
+- Reactive forms with validation
+- Angular signals (`signal`, `computed`, `effect`)
+- Parent-child communication using `@Input()` and `@Output()`
+- HTTP service calls using `HttpClient`
+- Creating an Angular service
+- Lazy loading a component
+- 404 page handling with wildcard routing
 
-Add form submission handling and validation feedback
-Build a user list display for http-calls
-Add custom pipes in pipes/
-Implement route guards or lazy-load more components
-Add tests in *.spec.ts files for components and services
-Summary
-This repo is a practical Angular playground with focused exercises in:
+---
 
-routing
-forms
-component communication
-reactive programming
-lazy loading
-HTTP services
-It’s a good learning resource for anyone who wants to understand real Angular application structure and common development patterns.
+## 📁 Project Structure
+
+The main practice code lives under:
+
+- `src/app/`
+  - `app.ts` — root standalone component
+  - `app.routes.ts` — router configuration
+  - `counter-application/` — signal-based counter and computed state
+  - `form-practice/` — template-driven form practice
+  - `reactive-forms/` — reactive forms with validation
+  - `parent/` + `child/` — parent-child data flow and event emission
+  - `pipes/` — angular pipes demo with lazy loading
+  - `http-calls/` — HTTP GET requests via a service
+  - `page-not-found/` — wildcard 404 page
+
+- `src/app/Services/service-code.ts`
+  - Angular service for API requests
+
+- `src/models/formLayout.ts`
+  - Interface definition for login form data
+
+---
+
+## ✨ Key Features
+
+### Routing
+- `app.routes.ts` includes routes for:
+  - `/counter-app`
+  - `/form`
+  - `/reactive-forms`
+  - `/parent-child`
+  - `/pipes` (lazy loaded)
+  - `/http-calls`
+  - `**` fallback for unknown paths
+
+### Signals and Reactivity
+- `counter-application` demonstrates:
+  - `signal`
+  - `computed`
+  - `effect`
+  - `WritableSignal`
+
+### Forms
+- `form-practice` uses template-driven forms and `NgForm`
+- `reactive-forms` uses `FormControl`, `FormGroup`, and `Validators`
+
+### Component Communication
+- `parent` sends data to `child` through `@Input()`
+- `child` sends data back through `@Output()`
+
+### HTTP Calls
+- `http-calls` uses `ServiceCode` service
+- fetches data from `https://dummyjson.com/products`
+
+### Lazy Loading
+- `pipes` route only loads when visited
+- great for learning route-level code splitting
+
+---
+
+## 📌 How to Run
+
+```bash
+cd angular-project
+npm install
+npm start
